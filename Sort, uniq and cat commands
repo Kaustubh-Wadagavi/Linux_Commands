@@ -1,0 +1,26 @@
+ Linux Commands and Lab Assignments:
+
+Sort the lines of the files(sort)-
+
+SORT command is used to sort a file, arranging the records in a particular order. 
+1. SORT command sorts the contents of a text file, line by line.
+2. sort is a standard command-line program that prints the lines of its input or concatenation of all files listed in its argument list in sorted order.
+3. The sort command is a command-line utility for sorting lines of text files. It supports sorting alphabetically, in reverse order, by number, by month and can also remove duplicates.
+4. The sort command can also sort by items not at the beginning of the line, ignore case sensitivity and return whether a file is sorted or not. Sorting is done based on one or more sort keys extracted from each line of input.
+5. By default, the entire input is taken as the sort key. Blank space is the default field separator.
+Syntax : $ sort filename.txt
+
+Remove duplicate lines of the file(uniq)-
+1. The uniq command in Linux is a command-line utility that reports or filters out the repeated lines in a file.
+2. uniq is the tool that helps to detect the adjacent duplicate lines and also deletes the duplicate lines. 
+3. uniq filters out the adjacent matching lines from the input file and writes the filtered data to the output file.
+Syntax of uniq Command :$ uniq [OPTION] [INPUT[OUTPUT]]
+
+Concatenate 2 or more files(cat)-
+1. Cat(concatenate) command is very frequently used in Linux. 
+2. It reads data from the file and gives its content as output. 
+3. It helps us to create, view, concatenate files. 
+A. Command: $ cat filename  //output-It will show the content of given filename.
+B. Command: $cat file1 file2 //Output-This will show the content of file1 and file2.
+C. Command: $cat -n filename //Output-It will show content with line number.
+D. Command: $ cat >newfile //Output- Will create and a file named newfile.

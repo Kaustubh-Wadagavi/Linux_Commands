@@ -1,0 +1,40 @@
+Search files for strings/words (grep, egrep, fgrep)
+grep-
+1. The grep filter searches a file for a particular pattern of characters and displays all lines that contain that pattern. The fgrep filter searches for fixed-character strings in a file or files.
+2. grep can be used to search string within a file. 
+3. Performed Commands
+A. grep linux * 
+B. grep -i linux * - to ignore case we need to use grep with combination of -i
+C. grep -inh --colour=auto linux * - grep option -h allows us to suppress to display the file name and with -n option grep numbers lines within a file. --colour=auto highlights match
+D. grep -iv linux * -If we do not want grep to output lines which does not contain lines with keyword linux we use -v ( invert )
+E. grep -icv linux *  -With -c grep can count string occurrences within files, so here the grep will print number of how many times keyword linux does NOT appear within both files.
+F. grep -l Ubuntu * -If we are looking for the name of the file which contains keyword "Ubuntu" we would use grep's -l option
+G. grep -ixc linux * -Grep with -x option will print exact occurrences only.
+
+egrep-
+1. egrep is an extended version of grep or egrep is equal to grep -E. 
+2. Egrep supports more regular expression patterns.
+3. Performed Commands-
+A. Search for lines which contains exactly two consecutive p characters
+egrep p{2} *
+OR
+grep pp *
+OR
+grep -E p{2} * 
+2. Get the output of egrep command with all lines which ends with "S" OR "A" :
+egrep "S$|A$" * 
+
+fgrep-
+1. fgrep is a faster version of grep which does not support regular expressions and therefore is considered to be faster. fgrep is equal to grep -F.
+2. fgrep does not interpret regular expressions (regex)
+fgrep linux$ *
+egrep linux$ *
+grep linux$ * 
+
+rgrep-
+rgrep is a recursive version of grep. Recursive in this case means that rgrep can recursively descend through directories as it greps for the specified pattern. rgrep is similar to grep -r.
+mkdir -p dir/dir1
+echo "Linux_rgrep" > dir/dir1/rgrep.txt
+grep rgrep *
+rgrep rgrep *
+grep -r rgrep * 

@@ -1,0 +1,36 @@
+List contents of a directory including hidden files. Detailed understanding of the output (ls)
+1.  ls command is used to list files and directories in Linux.
+2.  ls command comes with so many arguments and features like you can sort files and directories by Date, by Size, able to check hidden files and directories, permissions, inode information and so on.
+3.  Performed Commands-
+    A. ls -l                                    - Long Listing of Files and Directories
+    B. ls -l python                         - Listing files of python Directory.
+    C. ls -l rpsGame.py                 - Searched specific file from the directory.
+    D. ls -a Python                        - Checked hidden files and directories.
+    E. ls -i                                    - It checked the inode number of the file.
+    F. ls -o                                    - Listing the only owner of files and directories.
+    G. ls -m                                  - Listing the files and directories separated by a 
+                                                     comma.
+    H. ls -R                                   - Listing files and directories recursively.
+    I.   ls -t                                    - this command list files and directories by its 
+                                                       modification date in ascending order means 
+                                                       higher will comes first. 
+    J. ls -s                                     - this command sort files and directories by size.
+    K. ls -h                                    - this command shows files and directories in 
+                                                       human-readable format.  
+    L. ls -n                                    - this command is used to display User ID(UID) and
+                                                     Group ID(GID) of file and directory.
+   M. ls -G                                   - If we want to know to list the only Owner of the 
+                                                     files and directories to which they belong and 
+                                                     not groups.
+   N. ls -g                                    - this command display files and directories which 
+                                                     group they belong to.
+   O. ls -F                                    - this command list the directories and Add / at 
+                                                     the end.
+    
+Delete Files And Directories(rm and rmdir)-
+1. rmdir can only be used to remove an empty directory. It won't work for non-empty directories. 
+2. rm removes both files and non-empty directories. 
+3. Performed commands-
+A. rmdir Directory - this command removed an empty folder named Directory.
+B. rm Demo.txt - This command removed the txt file.
+The drawback of rm command is if we use this command on any file or directory after deleting we can't recycle it(can't go in the trash), which means this command deletes file and directory permanently.

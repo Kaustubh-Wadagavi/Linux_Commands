@@ -1,0 +1,52 @@
+**Output the first n or last n lines of a file(head, tail)-**
+
+1. It is the complementary of the Tail command. 
+2. The head command, as the name implies, prints the top N number of data of the given input. 
+3. By default, it prints the first 10 lines of the specified files. 
+4. If more than one file name is provided then data from each file is preceded by its file name.
+**Syntax:**
+head [OPTION]... [FILE]...
+5. -n num: Prints the first ‘num’ lines instead of the first 10 lines. num is mandatory to be specified in command otherwise it displays an error.
+6. -c num: Prints the first ‘num’ bytes from the file specified. Newline counts as a single character, so if head prints out a new line, it will count it as a byte. num is mandatory to be specified in command otherwise displays an error.
+7. -q: It is used if more than 1 file is given. Because of this command, data from each file is not preceded by its file name.
+8. -v: By using this option, data from the specified file is always preceded by its file name.
+**Tail command in Linux-**
+1. It is the complementary of head command. 
+2. The tail command, as the name implies, print the last N number of data of the given input. 
+3. By default, it prints the last 10 lines of the specified files. If more than one file name is provided then data from each file is preceded by its file name.
+**Syntax:**
+tail [OPTION]... [FILE]...
+
+**Count number of lines, words, characters of a file(wc)-**
+1. It is used to find out the number of lines, word count, byte and characters count in the files specified in the file arguments.
+2. By default, it displays four-columnar output.
+3. The first column shows the number of lines present in a file specified, the second column shows the number of words present in the file, the third column shows the number of characters present in the file and the fourth column itself is the file name which is given as argument.
+4. Syntax:
+wc [OPTION]... [FILE]...
+
+**Cut the sections from lines of a file(cut)-**
+1. The cut command in UNIX is a command for cutting out the sections from each line of files and writing the result to standard output. 
+2. It can be used to cut parts of a line by byte position, character and field. 
+3. Basically the cut command slices a line and extracts the text. 
+4. It is necessary to specify option with command otherwise it gives error. 
+5.If more than one file name is provided then data from each file is not precedes by its file name.
+Syntax:
+cut OPTION... [FILE]...
+
+**Paginate the contents of a file(more, less)-**
+1. Less command is linux utility which can be used to read contents of text file one page(one screen) per time. 
+2. It has faster access because if file is large, it don’t access complete file, but access it page by page.
+3. For example, if it’s a large file and you are reading it using any text editor, then the complete file will be loaded to main memory, but less command don’t load entire file, but load it part by part, which makes it faster.
+4. Syntax
+less filename
+5. more command is used to view the text files in the command prompt, displaying one screen at a time in case the file is large (For example log files). 
+6. The more command also allows the user do scroll up and down through the page. 
+7. The syntax along with options and command is as follows. Another application of more is to use it with some other command after a pipe. When the output is large, we can use more command to see output one by one.
+Syntax:
+more [-options] [-num] [+/pattern] [+linenum] [file_name]
+
+
+**Compare and find differences between 2 or more files(diff)-**
+1. diff stands for difference. This command is used to display the differences in the files by comparing the files line by line.
+syntax:
+diff[options] file1 file2s

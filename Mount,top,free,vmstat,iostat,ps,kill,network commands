@@ -1,0 +1,63 @@
+Mount and unmount remote file systems(mount)-
+1. All files in a Linux filesystem are arranged in the form of a big tree rooted at ‘/‘.
+2. These files can be spread out on various devices based on your partition table, initially, our parent directory is mounted(i.e attached) to this tree at ‘/‘.
+3. others can be mounted manually using the GUI interface(if available) or using the mount command.
+4. mount command is used to mount the filesystem found on a device to big tree structure(Linux filesystem) rooted at ‘/‘. 
+5. Conversely, another command umount can be used to detach these devices from the Tree.
+6. Syntax:
+mount -t type device dir
+
+Find the system memory information(free)-
+1. It is used to Display the memory.
+$free [OPTION]
+OPTION: refers to the options compatible with free command.
+2. -b, – -bytes: It displays the memory in bytes.
+3. -k, – -kilo: It displays the amount of memory in kilobytes(default).
+4. -m, – -mega: It displays the amount of memory in megabytes.
+5. -g, – -Giga: It displays the amount of memory in gigabytes.
+6. – – tera: It displays the amount of memory in terabytes.
+7. -h, – -human: It shows all output columns automatically scaled to the shortest three digit unit and displays the units also of print out. The units used are B(bytes), K(kilos), M(Megas), G(gigas), and T(teras).
+8. -c, – -count: It displays the output c number of times and this option actually works with -s option.
+9. -l, – -lohi: It shows the detailed low and high memory statistics
+10. -o, – -old: This option disables the display of the buffer adjusted line.
+11. -s, – -seconds: This option allows you to display the output continuously after s seconds delay. In actual, the usleepsystem call is used for microsecond resolution delay times.
+12. -t, – -total: It adds an additional line in the output showing the column totals.
+13. – -help: It displays a help message and exit.
+14. -V, – -version: It displays version info and exit.
+
+Display current system usage(top, vmstat, iostat)-
+1. The iostat command in Linux is used for monitoring system input/output statistics for devices and partitions.
+2. It monitors system input/output by observing the time the devices are active in relation to their average transfer rates.
+3. top command is used to show the Linux processes. It provides a dynamic real-time view of the running system. 
+4. vmstat command in Linux is a performance monitoring command of the system as it gives the information about processes, memory, paging, block IO, disk and CPU scheduling. All these functionalities make the command vmstat also known as a virtual memory statistic reporter.
+
+Display all the processes in the system(ps)-
+1. Linux provides us a utility called ps for viewing information related to the processes on a system that stands as an abbreviation for “Process Status”. 
+2. ps command is used to list the currently running processes and their PIDs along with some other information depends on different options. 
+
+Send signals to the process(kill)-
+kill command in Linux (located in /bin/kill), is a built-in command which is used to terminate processes manually. kill command sends a signal to a process which terminates the process.
+
+Print network info - connections, listeners etc(netstat)-
+Netstat command displays various network related information such as network connections, routing tables, interface statistics, masquerade connections, multicast memberships, etc.
+
+Check connectivity to remote systems(ping)-
+1. PING (Packet Internet Groper) command is used to check the network connectivity between host and server/host. 
+2. This command takes as input the IP address or the URL and sends a data packet to the specified address with the message “PING” and get a response from the server/host this time is recorded which is called latency.
+
+Manage & configure firewalls(iptables)-
+1. iptables is a command-line interface used to set up and maintain tables for the Netfilter firewall for IPv4, included in the Linux kernel. 
+2. The firewall matches packets with rules defined in these tables and then takes the specified action on a possible match. Tables is the name for a set of chains.
+
+Manage & run system init scripts(service, sysctl)-
+1. systemctl is used to examine and control the state of the systemd system and service manager.
+2. The service command is used to run a System V init script. 
+
+Display system info(uname, hostname)-
+1. The command ‘uname‘ displays the information about the system.
+2. hostname command in Linux is used to obtain the DNS(Domain Name System) name and set the system's hostname or NIS(Network Information System) domain name.
+3.  A hostname is a name that is given to a computer and it attached to the network. Its main purpose is to uniquely identify over a network.
+
+
+
+

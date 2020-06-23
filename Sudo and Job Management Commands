@@ -1,0 +1,85 @@
+1.The Sudo command-
+The Sudo command allows us to run programs with the security privileges of another user. It promotes the personal password and confirms the request to execute a command by checking a file, called sudoers, which the system administrator configures. Using a sudoers file, system administrators can give certain users or groups access to some or all commands without those users having to know the root password. It also logs all commands and arguments so there is the record of who used it for what and when. 
+sudo command
+Replace command with the command for which you want to use Sudo.
+The Sudo command also makes it easier to practice the principle of least privilege (PoLP), which is a computer security concept that helps control system access and potential system exploits and compromises. 
+ 
+2.Job management. Run commands in the background and even after the user has logged out nohup, &, fg, bg, ctrl-z
+a. Managing Foreground Processes-
+Most processes that you start on a Linux machine will run in the foreground. The command will begin execution, blocking the use of the shell for the duration of the process. The process may allow user interaction or may just run through a procedure and then exit. Any output will be displayed in the terminal window by default. We’ll discuss the basic way to manage foreground processes below.
+
+for starting a Process- 
+Some foreground commands exit very quickly and returns you to a shell prompt almost immediately
+e.g. $ echo "Hello World"
+ Other foreground commands take longer to execute, blocking shell access for the duration. This might be because the command is performing a more extensive operation or because it is configured to run until it is explicitly stopped or until it receives other user input.
+e.g. $ top
+A command that runs indefinitely is the top utility. After starting, it will continue to run and update its display until the user terminates the process.
+
+Terminating the process-
+Suppose we start a simple bash loop on the command line. We can start a loop that will print “Hello World” every ten seconds. This loop will continue forever.
+e.g.
+$ while true; do echo "Hello World"; sleep 10; done
+Loops have no "quit" key. We have to stop the process by sending it a signal. 
+In Linux, the kernel can send processes signals in order to request that they exit or change states. Linux terminals are usually configured to send the “SIGINT” signal (typically signal number 2) to the current foreground process when the CTRL-C key combination is pressed. The SIGINT signal tells the program that the user has requested termination using the keyboard.
+To stop the loop we have to use CTRL-C. 
+The SIGINT signal sent by the CTRL-C combination is one of many signals that can be sent to programs.
+Most signals do not have keyboard combinations associated with them and must be sent using the kill command instead.
+
+Suspending Process-
+Another signal that we can send is the “SIGTSTP” signal. When we hit CTRL-Z, our terminal registers a “suspend” command, which then sends the SIGTSTP signal to the foreground process. This will basically pause the execution of the command and return control to the terminal.
+e.g $ command ping -i 5 google.com
+           pressed ctrl-z
+o/p-   [1]+  Stopped                 ping -i 5 google.com
+The ping command has been temporarily stopped, giving you access to a shell prompt again. We can use the ps process tool.
+e.g. $ ps T
+o/p-    Output
+  PID TTY      STAT   TIME COMMAND
+26904 pts/3    Ss     0:00 /bin/bash
+29633 pts/3    T      0:00 ping -i 5 google.com
+29643 pts/3    R+     0:00 ps t
+we can resume execution of the command in the foreground again by typing
+$ fg
+when the process gets resumed, terminate it with CTRL-C.
+
+Managing foreground Processes:
+The main alternative to running a process in the foreground is to allow it to execute in the background. A background process is associated with the specific terminal that started it but does not block access to the shell. Instead, it executes in the background, leaving the user able to interact with the system while the command runs. Because of the way that a foreground processes interact with its terminal, there can be only a single foreground process for every terminal window. Because background processes return control to the shell immediately without waiting for the process to complete, many background processes can run at the same time.
+
+Starting Process
+e.g.- $ command ping -i 5 google.com &
+o/p- [1] 4287
+
+Listing Background Processes
+$ jobs
+Output:
+[1]+  Running                 command ping -i 5 google.com &
+This shows that we currently have a single background process running. The [1] represents the command’s “job spec” or job number. We can reference this with other job and process control commands, like kill, fg, and bg by preceding the job number with a percentage sign. In this case, we’d reference this job as %1.
+e.g Kill %1
+
+Changing Process state:
+
+Moving Foreground Processes to the Background
+If we forget to end a command with & when we start it, we can still move the process to the background.
+The first step is to stop the process with CTRL-Z again:
+CTRL-Z
+Once the process is stopped, we can use the bg command to start it again in the background:
+bg
+we will see the job status line again, this time with the ampersand appended:
+Output:
+[1]+ ping -i 5 google.com &
+By default, the bg command operates on the most recently stopped process. If we have stopped multiple processes in a row without starting them again, you can reference the process by job number to background the correct process.
+
+Moving Background Processes to the Foreground:
+We can also move background processes to the foreground by typing fg:
+fg
+This operates on your most recently backgrounded process (indicated by the “+” in the output of the job). It immediately suspends the process and puts it into the foreground. To specify a different job, use its job number:
+fg %2
+Once a job is in the foreground, you can kill it with CTRL-C, let it complete, or suspend and background it again.
+
+Using nohup
+If you know when starting the process that you will want to close the terminal before the process completes, you can start it using the nohup command. This makes the started process immune to the SIGHUP signal. It will continue running when the terminal closes. It will be reassigned as a child of the init system:
+nohup ping -i 5 google.com &
+You will see a line that looks like this, indicating that the output of the command will be written to a file called nohup.out (in the current directory if writeable, otherwise to your home directory):
+Output
+nohup: ignoring input and appending output to ‘nohup.out’
+This is to ensure that output is not lost if the terminal window is closed.
+If you close the terminal window and open another one, the process will still be running. You will not see it in the output of the jobs command because each terminal instance maintains its own independent job queue. The terminal closing caused the ping job to be destroyed even though the ping process is still running.

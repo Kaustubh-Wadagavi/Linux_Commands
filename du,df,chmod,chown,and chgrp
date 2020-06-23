@@ -1,0 +1,29 @@
+**Report disk and file system usage(du, df)**
+1. The df and du commands are two small utilities that are extremely useful. 
+2.  The df command displays the disk free space.
+3. The du command displays the disk usage.
+4. There basic usage is df [options] and du [options].
+
+
+**Change file/directory permissions(chmod)**
+1. he chmod command sets the permissions of files or directories.
+2. a set of flags associated with each file determines who can access that file, and how they can access it. 
+3. These flags are called file permissions or modes, as in the mode of access.
+4. The command name chmod stands for change mode. It restricts the way a file can be accessed.
+5. e.g chmod u=rwx,g=rx,o=r myfile
+
+
+**Change file/directory ownership (chown, chgrp)**
+**chown: Change ownership of the file.**
+
+Description: Only the owner of the file has the rights to change the file ownership.
+Syntax: chown [owner] [file]
+Example: Change the owner of file1 to user2 assuming it is currently owned by the current user
+$ chown user2 file1
+
+**chgrp: Change the group ownership of the file**
+Description: Only the owner of the file has the rights to change the file ownership
+Syntax: chgrp [group] [file]
+Example: Change group of file1 to group2 assuming it is currently owned by the current user
+$ chgrp group2 file1
+

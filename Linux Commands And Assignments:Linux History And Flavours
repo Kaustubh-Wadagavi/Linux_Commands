@@ -1,0 +1,35 @@
+Linux Level 1 Proficiency
+1. Who created Linux?
+Ans – Linux, Computer Operating System created by Finish software engineer Linus Torvalds 
+and the Free Software Foundation(FSF) in 1990. Linux Operating System is similar to MINIX, a UNIX Operating System.
+
+2. What is Open-Sorce?
+Ans- Open source means any computer software that's distributed with its source code available for modification. 
+That means it usually includes a license for programmers to change the software in any way they choose, 
+They can fix bugs, improve functions, or adapt the software to suit their own needs.
+
+3. How is Linux developed and maintained?
+Ans- Linux is opensource. Linux is built collaboratively across companies, geographies, and markets. 
+Linux has a huge community of more than 10000 developers and 1000 companies, helping to move towards the future. 
+By using Linux windows and android phones are developed. Also, Google, Facebook, and Twitter-like companies use Linux. 
+A new kernel comes out every 2-3 months. This sort of speed is achieved by employing a unique collaborative developing technique. 
+This technique has made Linux as the biggest collaborative development product.
+
+4. And anything else you can discover about Linux history.
+Ans- The resulting Linux Kernel has been marked by constant growth throughout its history. 
+Since the initial release of its source code in 1991, it has grown from a small number of C files under 
+a license prohibiting commercial distribution to the 4.15 version in 2018 with more than 23.3 million lines of source code, 
+not counting comments, under the GNU General Public License v2.
+
+5. Why there are so many flavors in Linux?
+Ans- The reason why there are so many Linux flavors out there is,
+ because that unlike Windows and macOS, Linux is not a live with what you get one fits all operating system.
+ Linux is an operating system core or kernel with a modular build around it. Hence, Linux has so many Flavours.
+
+6. What is the difference between each flavor?
+Ans- The differences between flavors are in the particulars of what a flavor is designed to accomplish, 
+which versions of what tools it includes to achieve that goal, and how it chooses to handle configuration and packaging.
+A flavor aimed at desktop users typically includes the X-window system, a desktop environment, a printing subsystem, networking components, etc. 
+One designed for servers often doesn't include X or a desktop environment but adds services that aren't needed on a desktop (webserver, database, network filesystems, etc).
+
+

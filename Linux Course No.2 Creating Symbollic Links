@@ -1,0 +1,18 @@
+    Working with Links in Linux 
+A.Create a symbolic Soft Link-
+1. For creating symbollic link we have to choose one Directory.
+2. After we to use the command ln-s name of file [name of file].
+3.After this we have to check it by using ls -al.
+4.for reading file content we have to use the command cat [filename].
+5.To check the inode number for link then we have to use the command ls -i.
+
+B.Create a Hard Link-
+1.To create hard link we we have to choose one directory.
+2.After we have to use ln command and file name.
+3.To check the link we have to use command ls -al.
+4.An then use command cat to check both are same.
+5.To check inode number we have to use ls -i.
+
+If we want to create a soft link across file system then we have to use -s flag.
+
+The file and link have different inodes.But, the linking will work. 

@@ -1,0 +1,119 @@
+Linux Commands And assignments.
+
+
+1. Usage of pipes and redirection operators- |, >, >>, <
+	A.  A pipe is a form of redirection (transfer standard output to other destinations).
+	B.  If we want to connect stdout to stdin of another command. We can make this using the pipe character ‘|’. It is used to combine one or more commands. The output of the first command is to act as an input of the second command.
+	E.g- Command_1 | Command_2 | ............ | Command_n
+            Performed Commands:
+	1.     ls -l | more
+	The above command is equivalent to the following command.
+	2.     ls -l > temp
+	3.     more < temp
+
+2. Execute command in superuser mode – sudo
+e.g. - sudo apt-get install ........
+
+3. Job Management. Run commands in the background and even after the user logged out. (Nohup, &, fg, bg, ctrl-z)
+Performed Commands-
+ A. jobs – It Lists all the jobs that are running or suspended
+ B. fg – It is used to bring the job to the foreground.
+ C. bf- It is used to send the job to the background.
+ D. stop or ctrl+z – This command suspends the jobs.
+ E. kill or ctrl+c – This command terminates the job.
+ F. nohup- It prevents the processes or jobs from receiving the SIGHUP (Signal Hang UP) signal.
+
+4. Executing commands on the output of another command(xargs)
+It is used to build and execute commands from standard input. It converts input from standard input into an argument to a command.
+
+5. Search Files(find)
+This command is used to search the files from directories.
+
+6.List contents of a directory including hidden files. (ls)
+This command shows all the files including hidden files from the specified directory.
+
+7. Delete files and directories(rm, rmdir)
+rm command is used to delete one file and rmdir command is used to delete the directory.
+
+8.Create/copy files and Create Directories(cp, mkdir, touch)
+    A. touch: It creates a new file or update its timestamp. By using this command we can create at a  time multiple files.
+         e.g. touch file1 file2
+    B. cp: It is used to copy the files. 
+         Syntax: cp [option]source destination
+          e.g. cp file1 file2
+          Here, copies the contents from file1 to file2 and contents of file1 is retained.
+    C. mkdir: It is used to create the directory.
+         Syntax: mkdir [option] directory. 
+
+9. Move files and Directories(mv)
+     Syntax: mv [option] source destination.
+
+10. Search files for strings/words(grep,egrep,fgrep)
+      A. grep: The grep filter searches a file for a particular pattern of characters and display all lines  
+           that contain that pattern
+           Syntax: grep [option] pattern [files]
+      B. egrep- This command is exactly the same as grep -E.
+      C. fgrep- The fgrep filter is used to search for the fixed character strings in a file. There can be multiple files also to be searched.
+
+11. Report disk and file system usage(du, df)
+      A. du- It can be used to track the files and directories which are consuming an excessive amount of space in hard drive.
+      B. df- It can be used to show the free space on the Linux computer.
+
+12. Change file/directory permissions(chmod)
+      chmod: This command is used to give permissions to files or directories using r,w and x.
+
+13. Change file/directory ownership(chown, chgrp)
+      A. chown-  syntax: chown [options] :new_group object(s)
+      B. chgrp- syntax: chgrp[options] groupfile
+
+14. To create hard and soft link (ln)
+       ln is used to create hard and soft links between directories or files.
+
+15. Create compressed Packages(tar,gzip,gzunip)
+       This commands are used to create compressed files.
+
+16. Create and extract rpm packages(rpm)
+       rpm means Red Hat package manager. When we create the rpm pckages or files that package or file refers to .rpm.
+
+17. Split files into multiple chunks(split)
+      It is used to break the file in multiple chunks.
+
+18. Output the first n or last n of a file(head, tail)
+      These commands are used to display the contents which head command print lines from beginning and tail command prints lines from the end of the file.
+
+19. wc command is used to count characters, strings, and lines from files.
+
+20. cut command is used to cut the sections from the lines of the file.
+
+21. more, less these two commands are used to paginate the content of a file.
+      Pagination is the process of separating print or digital content into discrete pages. Pagination refers to the automated process of adding consecutive numbers to identify the sequential order of pages.
+
+22. diff command used to find out the diff between two files. 
+
+23. uniq command is used to remove the duplicate lines from specified folder.
+
+24.sort command is used to sort the lines from specified files.
+
+25. cat command is used concatenate two or more files.
+
+26. Mount and unmount command:
+A. The mount command mounts a storage device or filesystem, making it accessible and attaching it to an existing directory structure. 
+B. The umount command "unmounts" a mounted filesystem, informing the system to complete any pending read or write operations, and safely detaching it.
+
+27. free command is used to find the system memory information.
+
+28. top, vmstat and iostat commands are used to display current usage of the system.
+
+29. ps command is used to display all running processes in the system.
+
+30. kill command is used to stop any running process.
+
+31. netstat command is used to print network info- connections, listeners etc.
+
+32. ping command is used to check connectivity of remote system.
+
+33. iptable command is used to manage and configure firewalls.
+
+34. service and sysctl commands are used to manage and run system init script.
+
+35. uname and hostname commands are used to display system information.

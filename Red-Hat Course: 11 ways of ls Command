@@ -1,0 +1,35 @@
+# Red-Hat Course: 11 ways to use The ls command in Linux
+
+1. ls-
+The ls command allows us to list files in a directory. This lists all of the non-hidden files and directories in your working directory.
+
+2. ls -l
+This shows a lot more information presented to the user than the standard command. You will see the file permissions, the number of links, owner name, owner group, file size, time of last modification, and the file or directory name. 
+
+3. ls -lh
+The -lh flag is the same long list format command as above, however, the file size is displayed in a human-readable format. 
+
+4. ls -r
+lists all non-hidden files and directories. However, this command lists them in reverse order. 
+
+5. ls -a
+The -a option displays all files, hidden or otherwise. Some files begin with . or .. and those files are hidden from the user by default. 
+
+6. ls -ltr
+This combination of options will show the latest modification to a file or directory in reverse order.
+
+7. ls -F
+This will show the / character at the end of all directories.
+
+8. ls -lS
+Displays the files in order of size from largest to smallest.
+
+9. ls -R
+This option will list directory trees in a long format. 
+
+10. ls -i
+This option will display the inode number beside each file or directory. An inode is the index node that identifies a specific file. Some files have multiple hard links, however, if the hard links of multiple files share an inode, they are equivalent.
+
+11. ls --version
+This command will show us the version of the ls command that we are using.
+

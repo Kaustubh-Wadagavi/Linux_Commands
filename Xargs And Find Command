@@ -1,0 +1,29 @@
+**Executing commands on the output of another command (xargs)**
+1. Xargs is a command that reads streams of data from standard input, then generates and executes command lines; meaning it can take the output of a command and passes it as argument of another command. 
+2. If no command is specified, xargs executes echo by default. We can also instruct it to read data from a file instead of stdin.
+Performed Commands:
+a. $ find Pictures/tecmint/ -name "* .png" -type f -print0 | xargs -0 tar -cvzf images.tar.gz
+b. $ ls -1 Pictures/tecmint/
+c. $ ls -1 Pictures/tecmint/ | xargs
+d. $ cut -d: -f1 < /etc/passwd | sort | xargs
+e. $ ls *upload* | xargs wc
+f. $ find Downloads -name "DomTerm" -type d -print0 | xargs -0 /bin/rm -v -rf "{}"
+3. we can instruct xargs to read items from a file instead of standard input using the -a flag 
+e.g $ xargs -a rss_links.txt
+4. We can get more information, read the xargs man page using $ man xargs.
+
+**Search Files (Find)-**
+1. Find command is used to search and locate the list of files and directories based on conditions you specify for files that match the arguments.
+2. Find can be used in a variety of conditions like you can find files by permissions, users, groups, file type, date, size, and other possible criteria.
+3. Performed Commands
+   a. cd Desktop
+   b. find Python
+    This command Searched Directory named as Python
+   c. cd Python
+   d. find myPets.py 
+   This command I used to find the file.
+   e. find -iname mypets.py
+   This command I used to find the file by ignoring the case sensitivity of the name.
+4. We can use find command to check the 777 permission of the file.
+5. we Find all .mp3 files with more than 10MB and delete them using one single command.
+    e.g $ find / -type f -name *.mp3 -size +10M -exec rm {} \;

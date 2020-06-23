@@ -1,0 +1,34 @@
+**Create Hard And Soft Links:**
+The ln command is used to create links between files.
+1. Symbolic links are most useful for avoiding complicated paths.
+2. Symbolic links make it easy to make some set of files appear to exist in multiple locations without having to make separate copies.
+3. Hard links are most useful for keeping file content in a single location by avoiding duplication of what might be a very large amount of data.
+**Syntax:**
+This form is simple, the source file with destination link name you have to specify
+1. ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)
+we have to give source file and directory as a link, simply the source file will be copied to the directory which we specify.
+2. ln [OPTION]... TARGET... DIRECTORY     (2nd form)
+we will specify the directory name and a file to be linked to the directory. It is mostly the same as 2nd form.
+3. ln [OPTION]... -t DIRECTORY TARGET...  (3rd form)
+
+
+**Create compressed packages (tar, gzip, gunzip)**
+1. The tar command is used to create tar archives by converting a group of files into an archive.
+2. It supports a vast range of compression programs such as gzip, bzip2, lzip, lzma, lzop, xz, and compress. 
+3. Tar was originally designed for creating archives to store files on magnetic tape which is why it has its name “Tape ARchive”.
+4. Gzip is the command for compressing tar files. By convention, the name of a tar archive compressed with gzip should end with either .tar.gz or .tgz.
+5. a file that ends in .tar.gz is a .tar archive compressed with gzip.
+6. gunzip command is used to compress or expand a file or a list of files in Linux.
+7. It accepts all the files having extension as .gz, .z, _z, -gz, -z , .Z, .taz or.tgz and replace the compressed file with the original file by default.
+e.g gunzip [Option] [archive name/file name]
+
+**Create and extract rpm packages(rpm)**
+1. An RPM package is simply a header structure on top of a CPIO archive.
+2. The package itself is comprised of four sections: a header with a leading identifier (magic number) that identifies the file as an RPM package, a signature to verify the integrity of the package, the header or ‘tagged’ data containing package information, version numbers, and copyright messaging, and the archive containing the actual program files.
+e.g rpm -qlp ./path/to/test.rpm
+
+
+**Split files into multiple chunks(split)**
+1. splits is useful when transmitting large binary files over unreliable modem links with uucp. 
+2. splits reads an input file infile (or standard input if infile is “-”) and creates multiple output files which consist of the contents of infile broken into sequential pieces of size chunksize, given in “K” (units of 1024 bytes). If no chunksize is specified, splits assumes an output file size of 100K (102400 bytes).
+
